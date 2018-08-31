@@ -3,8 +3,8 @@ A yes/no game about being an instructional designer.
 
 ## Inspiration
 
-Reigns: UI
-Sort the Court: Yes/No mechanic and gameplay
+- Reigns: UI (https://www.devolverdigital.com/games/view/reigns)
+- Sort the Court: Yes/No mechanic and gameplay (https://graebor.itch.io/sort-the-court)
 
 ## Game Play
 
