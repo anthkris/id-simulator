@@ -1,0 +1,67 @@
+[
+	{
+		"character": "Carl Epperson",
+		"opportunity" : "Can you turn this PowerPoint into an elearning course?",
+		"rewards": {
+			"money": ,
+			"happiness": ,
+			"influence"
+		},
+		"response": {
+			"yes": "Awesome. Thanks so much!",
+			"no": "Oh... Maybe another time."
+		}
+	},
+	{
+		"character": "Julius Frederiksen",
+		"opportunity" : "We'd like you to make a course with the Super Awesome Authoring tool. Can you do it?",
+		"rewards": {
+			"money": ,
+			"happiness": ,
+			"influence"
+		},
+		"response": {
+			"yes": "Great! You have the tool, right?",
+			"no": "Well, we'll get someone else."
+		}
+	},
+	{
+		"character": "Sara Juárez Rangel",
+		"opportunity" : "We need someone to ",
+		"rewards": {
+			"money": ,
+			"happiness": ,
+			"influence"
+		},
+		"response": {
+			"yes": "Great! You have the tool, right?",
+			"no": "Well, we'll get someone else."
+		}
+	},
+	{
+		"character": "Arlette Chandonnet",
+		"opportunity" : "I'm a voice over artist. Let's connect on LinkingSocialNetwork!",
+		"rewards": {
+			"money": ,
+			"happiness": ,
+			"influence"
+		},
+		"response": {
+			"yes": "Great to connect!",
+			"no": "..."
+		}
+	},
+	{
+		"character": "Matilda Manning, Advisor",
+		"opportunity" : "It's a good time to start a blog. That will help you to build an audience.",
+		"rewards": {
+			"money": ,
+			"happiness": ,
+			"influence"
+		},
+		"response": {
+			"yes": "Good choice. Let's get you a domain name and some hosting.",
+			"no": "I see. Think about it."
+		}
+	},
+]
