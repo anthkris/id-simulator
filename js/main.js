@@ -21,12 +21,13 @@ const setDataText = (scenario, allData) => {
 const setButtons = (scenario, allData) => {
 	const cardFooter = document.getElementById('card-footer');
 	cardFooter.setAttribute('class', 'columns');
+	// Clear
 	cardFooter.innerHTML = '';
 
 	const leftColumn = document.createElement('div');
 	leftColumn.setAttribute('class', 'column');
 	const yesButton = document.createElement('button');
-	yesButton.setAttribute('class', 'button is-success is-fullwidth');
+	yesButton.setAttribute('class', 'button green-button is-fullwidth');
 	yesButton.innerHTML = 'Yes';
 	yesButton.addEventListener('click', (e) => {
 		console.log(allData);
@@ -37,7 +38,7 @@ const setButtons = (scenario, allData) => {
 	const rightColumn = document.createElement('div');
 	rightColumn.setAttribute('class', 'column');
 	const noButton = document.createElement('button');
-	noButton.setAttribute('class', 'button is-danger is-fullwidth');
+	noButton.setAttribute('class', 'button red-button is-fullwidth');
 	noButton.innerHTML = 'No';
 	noButton.addEventListener('click', (e) => {
 		respondToAction(scenario, allData, 'no');
@@ -47,7 +48,7 @@ const setButtons = (scenario, allData) => {
 	const oneColumn = document.createElement('div');
 	oneColumn.setAttribute('class', 'column');
 	const continueButton = document.createElement('button');
-	continueButton.setAttribute('class', 'button is-info is-fullwidth');
+	continueButton.setAttribute('class', 'button blue-button is-fullwidth');
 	continueButton.innerHTML = 'Continue';
 	continueButton.addEventListener('click', (e) => {
 		if (scenario.response.type === 'last') {
@@ -57,6 +58,56 @@ const setButtons = (scenario, allData) => {
 		}
 	});
 	oneColumn.append(continueButton);
+	console.log(scenario.response.type);
+
+	// Keyboard navigation
+	const yKeyDown = (e) => {
+		e.preventDefault();
+		if (e.keyCode === 89) {
+			respondToAction(scenario, allData, 'yes');
+			removeEventListeners();
+		}
+	};
+
+	const nKeyDown = (e) => {
+		e.preventDefault();
+		if (e.keyCode === 78) {
+			respondToAction(scenario, allData, 'no');
+			removeEventListeners();
+		}
+	};
+
+	const spaceKeyDown = (e) => {
+		e.preventDefault();
+		if (e.keyCode === 32) {
+			if (scenario.response.type === 'continue') {
+				respondToAction(scenario, allData, 'continue');
+				removeEventListeners();
+			} else if (scenario.response.type === 'last') {
+				respondToAction(scenario, allData, 'last', getBasicData);
+				removeEventListeners();
+			}
+		}
+	};
+
+	const removeEventListeners = () => {
+		document.removeEventListener('keydown', yKeyDown, false);
+		document.removeEventListener('keydown', nKeyDown, false);
+		document.removeEventListener('keydown', spaceKeyDown, false);
+	};
+
+	if (scenario.response.type === 'y/n') {
+		document.addEventListener('keydown', yKeyDown, false);
+		document.addEventListener('keydown', nKeyDown, false);
+	}
+
+	if (scenario.response.type === 'continue') {
+		document.addEventListener('keydown', spaceKeyDown, false);
+	}
+
+	if (scenario.response.type === 'last') {
+		document.addEventListener('keydown', spaceKeyDown, false);
+	}
 
 	switch(scenario.response.type) {
 		case 'y/n':

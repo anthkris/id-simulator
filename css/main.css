@@ -50,6 +50,11 @@ html, body {
 	padding: 0px 1.5rem;
 }
 
+#card-footer button {
+	color: #ffffff;
+	font-weight: bold;
+}
+
 #card-header {
 	padding: 1em;
 }
@@ -92,6 +97,18 @@ html, body {
 
 #persona-name {
 	text-align: center;
+}
+
+.blue-button {
+	background: #449DD1;
+}
+
+.green-button {
+	background: #00BFB2;
+}
+
+.red-button {
+	background: #D62839;
 }
 
 @media screen and (min-width: 600px) {
