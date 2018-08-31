@@ -59,8 +59,7 @@
 		"opportunity" : "Let's get to work!",
 		"image": "/images/Matilda.png",
 		"response": {
-			"type": "continue",
-			"goto": 6
+			"type": "last"
 		}
 	}
 ]

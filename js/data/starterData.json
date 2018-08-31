@@ -2,23 +2,45 @@
 	{
 		"character": "Carl Epperson",
 		"opportunity" : "Can you turn this PowerPoint into an elearning course?",
+		"image": "/images/Carl.png",
 		"rewards": {
-			"money": ,
-			"happiness": ,
-			"influence"
+			"money": 300,
+			"happiness": 5,
+			"influence": 1,
+			"skill": 1
 		},
 		"response": {
-			"yes": "Awesome. Thanks so much!",
-			"no": "Oh... Maybe another time."
+			"type": "y/n",
+			"yes": 1,
+			"no": 2
+		}
+	},
+	{
+		"character": "Carl Epperson",
+		"opportunity" : "Amazing! We'll get the files over to you immediately.",
+		"image": "/images/Carl.png",
+		"response": {
+			"type": "continue",
+			"goto": 3
+		}
+	},
+	{
+		"character": "Carl Epperson",
+		"opportunity" : "Too bad... Maybe another time.",
+		"image": "/images/Carl.png",
+		"response": {
+			"type": "continue",
+			"goto": 3
 		}
 	},
 	{
 		"character": "Julius Frederiksen",
 		"opportunity" : "We'd like you to make a course with the Super Awesome Authoring tool. Can you do it?",
 		"rewards": {
-			"money": ,
-			"happiness": ,
-			"influence"
+			"money": 300,
+			"happiness": 5,
+			"influence": 1,
+			"skill": 1
 		},
 		"response": {
 			"yes": "Great! You have the tool, right?",
@@ -29,9 +51,10 @@
 		"character": "Sara Juárez Rangel",
 		"opportunity" : "We need someone to ",
 		"rewards": {
-			"money": ,
-			"happiness": ,
-			"influence"
+			"money": 300,
+			"happiness": 5,
+			"influence": 1,
+			"skill": 1
 		},
 		"response": {
 			"yes": "Great! You have the tool, right?",
@@ -42,9 +65,10 @@
 		"character": "Arlette Chandonnet",
 		"opportunity" : "I'm a voice over artist. Let's connect on LinkingSocialNetwork!",
 		"rewards": {
-			"money": ,
-			"happiness": ,
-			"influence"
+			"money": 300,
+			"happiness": 5,
+			"influence": 1,
+			"skill": 1
 		},
 		"response": {
 			"yes": "Great to connect!",
@@ -55,13 +79,14 @@
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "It's a good time to start a blog. That will help you to build an audience.",
 		"rewards": {
-			"money": ,
-			"happiness": ,
-			"influence"
+			"money": 300,
+			"happiness": 5,
+			"influence": 1,
+			"skill": 1
 		},
 		"response": {
 			"yes": "Good choice. Let's get you a domain name and some hosting.",
 			"no": "I see. Think about it."
 		}
-	},
+	}
 ]
