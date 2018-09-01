@@ -3,6 +3,7 @@ const setDataText = (scenario, allData) => {
 	const content = document.getElementById('content-div');
 	const contentText = document.getElementById('content-text');
 	const personaDiv = document.getElementById('persona-div');
+	personaDiv.setAttribute('class', 'aspect-ratio-container');
 	personaDiv.innerHTML = '';
 	const personaName = document.getElementById('persona-name');
 
@@ -123,23 +124,45 @@ const setButtons = (scenario, allData) => {
 
 const respondToAction = (scenario, allData, type, func = () => {}) => {
 	let newText;
+	let id;
 	const responseData = scenario.response;
 
 	switch (type) {
 		case 'yes':
-			newText = allData[responseData.yes];
-			setDataText(newText, allData);
+			id = responseData.yes;
 			break;
 		case 'no':
-			newText = allData[responseData.no];
-			setDataText(newText, allData);
+			id = responseData.no;
 			break;
 		case 'continue':
-			newText = allData[responseData.goto];
-			setDataText(newText, allData);
+			id = responseData.goto;
 			break;
 		case 'last':
 			func();
+			return;
 			break;
 	}
+	if (id === -1) {
+		newText = randomScenario(allData);
+		setDataText(newText, allData);
+	} else {
+		newText = allData.find((data) => {
+			return data.id === id;
+		});
+		setDataText(newText, allData);
+	}
 };
+
+const randomScenario = (allData) => {
+	// Return a psuedorandom scenario id 
+	// As long as that scenario is not a responseType of continue
+	const filteredData = allData.filter((scenario) => {
+		return scenario.response.type !== "continue";
+	});
+
+	const random = filteredData[Math.floor(Math.random()*filteredData.length)];
+	return random;
+
+};
+
+// TODO: Should be able to update stats based on yes or no

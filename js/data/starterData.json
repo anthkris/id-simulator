@@ -1,92 +1,217 @@
 [
 	{
-		"character": "Carl Epperson",
+		"id": 7,
+		"character": "Beau Blount",
 		"opportunity" : "Can you turn this PowerPoint into an elearning course?",
-		"image": "/images/Carl.png",
-		"rewards": {
-			"money": 300,
-			"happiness": 5,
-			"influence": 1,
-			"skill": 1
-		},
+		"image": "/images/Beau.png",
 		"response": {
 			"type": "y/n",
-			"yes": 1,
-			"no": 2
+			"yes": 8,
+			"no": 9
 		}
 	},
 	{
-		"character": "Carl Epperson",
+		"id": 8,
+		"character": "Beau Blount",
 		"opportunity" : "Amazing! We'll get the files over to you immediately.",
-		"image": "/images/Carl.png",
+		"image": "/images/Beau.png",
+		"rewards": {
+			"money": 300,
+			"happiness": 5,
+			"influence": 2,
+			"skill": 2
+		},
 		"response": {
 			"type": "continue",
-			"goto": 3
+			"goto": -1
 		}
 	},
 	{
-		"character": "Carl Epperson",
+		"id": 9,
+		"character": "Beau Blount",
 		"opportunity" : "Too bad... Maybe another time.",
-		"image": "/images/Carl.png",
+		"image": "/images/Beau.png",
+		"rewards": {
+			"money": 0,
+			"happiness": -1,
+			"influence": 0,
+			"skill": 0
+		},
 		"response": {
 			"type": "continue",
-			"goto": 3
+			"goto": -1
 		}
 	},
 	{
-		"character": "Julius Frederiksen",
+		"id": 10,
+		"character": "Alexa Avalos",
 		"opportunity" : "We'd like you to make a course with the Super Awesome Authoring tool. Can you do it?",
-		"rewards": {
-			"money": 300,
-			"happiness": 5,
-			"influence": 1,
-			"skill": 1
-		},
+		"image": "/images/Alexa.png",
 		"response": {
-			"yes": "Great! You have the tool, right?",
-			"no": "Well, we'll get someone else."
+			"type": "y/n",
+			"yes": 11,
+			"no": 12
 		}
 	},
 	{
-		"character": "Sara Juárez Rangel",
-		"opportunity" : "We need someone to ",
+		"id": 11,
+		"character": "Alexa Avalos",
+		"opportunity" : "Great! You have the tool, right?",
+		"image": "/images/Alexa.png",
 		"rewards": {
 			"money": 300,
 			"happiness": 5,
-			"influence": 1,
-			"skill": 1
+			"influence": 2,
+			"skill": 2
 		},
 		"response": {
-			"yes": "Great! You have the tool, right?",
-			"no": "Well, we'll get someone else."
+			"type": "continue",
+			"goto": -1
 		}
 	},
 	{
-		"character": "Arlette Chandonnet",
+		"id": 12,
+		"character": "Alexa Avalos",
+		"opportunity" : "Well, we'll get someone else.",
+		"image": "/images/Alexa.png",
+		"rewards": {
+			"money": 0,
+			"happiness": -1,
+			"influence": 0,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 13,
+		"character": "Hannah Hatcher",
 		"opportunity" : "I'm a voice over artist. Let's connect on LinkingSocialNetwork!",
-		"rewards": {
-			"money": 300,
-			"happiness": 5,
-			"influence": 1,
-			"skill": 1
-		},
+		"image": "/images/Hannah.png",
 		"response": {
-			"yes": "Great to connect!",
-			"no": "..."
+			"type": "y/n",
+			"yes": 14,
+			"no": 15
 		}
 	},
 	{
-		"character": "Matilda Manning, Advisor",
-		"opportunity" : "It's a good time to start a blog. That will help you to build an audience.",
+		"id": 14,
+		"character": "Hannah Hatcher",
+		"opportunity" : "Great to connect!",
+		"image": "/images/Hannah.png",
 		"rewards": {
-			"money": 300,
-			"happiness": 5,
-			"influence": 1,
-			"skill": 1
+			"money": 0,
+			"happiness": 2,
+			"influence": 3,
+			"skill": 0
 		},
 		"response": {
-			"yes": "Good choice. Let's get you a domain name and some hosting.",
-			"no": "I see. Think about it."
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 15,
+		"character": "Hannah Hatcher",
+		"opportunity" : "...",
+		"image": "/images/Hannah.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 0,
+			"influence": 0,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 16,
+		"character": "Matilda Manning, Advisor",
+		"image": "/images/Matilda.png",
+		"opportunity" : "It's a good time to start a blog. That will help you to build an audience.",
+		"response": {
+			"type": "y/n",
+			"yes": 17,
+			"no": 18
+		}
+	},
+	{
+		"id": 17,
+		"character": "Matilda Manning, Advisor",
+		"opportunity" : "Good choice. Let's get you a domain name and some hosting.",
+		"image": "/images/Matilda.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 0,
+			"influence": 5,
+			"skill": 2
+		},
+		"response": {
+			"type": "once",
+			"goto": -1
+		}
+	},
+	{
+		"id": 18,
+		"character": "Matilda Manning, Advisor",
+		"opportunity" : "I see... Think about it.",
+		"image": "/images/Matilda.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 0,
+			"influence": 0,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 19,
+		"character": "Vinay Voss",
+		"opportunity" : "I'm a voice over artist. Let's connect on LinkingSocialNetwork!",
+		"image": "/images/Vinay.png",
+		"response": {
+			"type": "y/n",
+			"yes": 20,
+			"no": 21
+		}
+	},
+	{
+		"id": 20,
+		"character": "Vinay Voss",
+		"opportunity" : "Great to connect!",
+		"image": "/images/Vinay.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 2,
+			"influence": 3,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 21,
+		"character": "Vinay Voss",
+		"opportunity" : "...",
+		"image": "/images/Vinay.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 0,
+			"influence": 0,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
 		}
 	}
 ]

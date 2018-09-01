@@ -1,5 +1,6 @@
 [
 	{
+		"id": 0,
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "Hello! I'll help you run your instructional design company. But you'll have decide which opportunities to take and which to leave alone. Got it?",
 		"image": "/images/Matilda.png",
@@ -9,7 +10,8 @@
 			"no": 2
 		}
 	},
-	{
+	{	
+		"id": 1,
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "Great. You're a smart one. We'll get along just fine.",
 		"image": "/images/Matilda.png",
@@ -19,6 +21,7 @@
 		}
 	},
 	{
+		"id": 2,
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "So very amusing... Look, just focus, okay?",
 		"image": "/images/Matilda.png",
@@ -28,6 +31,7 @@
 		}
 	},
 	{
+		"id": 3,
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "You're just starting out now so your funds, client happiness, influence and skills are at a minimum. You have lots of potential to grow as an ID and as a business.",
 		"image": "/images/Matilda.png",
@@ -37,6 +41,7 @@
 		}
 	},
 	{
+		"id": 4,
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "Maybe one day you'll earn your CPPMPLP and be invited to join the Thot Leader's Club!",
 		"image": "/images/Matilda.png",
@@ -46,6 +51,7 @@
 		}
 	},
 	{
+		"id": 5,
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "For now, you should focus on growing your business and influence and keeping your clients happy.",
 		"image": "/images/Matilda.png",
@@ -55,6 +61,7 @@
 		}
 	},
 	{
+		"id": 6,
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "Let's get to work!",
 		"image": "/images/Matilda.png",

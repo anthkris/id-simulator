@@ -7,9 +7,7 @@ const getBasicData = () => {
 		})
 		.then((starters) => {
 			self.starters = starters;
-			// TODO: Get a random starter
-			setDataText(starters[0], starters);
+			// Get a random starter
+			setDataText(randomScenario(starters), starters);
 		});
 };
-
-//TODO: Need to update stats in scenarios now
