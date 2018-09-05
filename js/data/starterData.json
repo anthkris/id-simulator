@@ -17,7 +17,7 @@
 		"image": "/images/Beau.png",
 		"rewards": {
 			"money": 300,
-			"happiness": 5,
+			"happiness": 2,
 			"influence": 2,
 			"skill": 2
 		},
@@ -33,7 +33,7 @@
 		"image": "/images/Beau.png",
 		"rewards": {
 			"money": 0,
-			"happiness": -1,
+			"happiness": 0,
 			"influence": 0,
 			"skill": 0
 		},
@@ -60,7 +60,7 @@
 		"image": "/images/Alexa.png",
 		"rewards": {
 			"money": 300,
-			"happiness": 5,
+			"happiness": 2,
 			"influence": 2,
 			"skill": 2
 		},
@@ -76,7 +76,7 @@
 		"image": "/images/Alexa.png",
 		"rewards": {
 			"money": 0,
-			"happiness": -1,
+			"happiness": 0,
 			"influence": 0,
 			"skill": 0
 		},
