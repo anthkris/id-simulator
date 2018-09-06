@@ -343,5 +343,5 @@
 			"type": "continue",
 			"goto": -1
 		}
-	},
+	}
 ]
