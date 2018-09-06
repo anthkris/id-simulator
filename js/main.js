@@ -86,6 +86,9 @@ const setButtons = (scenario, allData) => {
 			if (scenario.response.type === 'continue') {
 				respondToAction(scenario, allData, 'continue');
 				removeEventListeners();
+			} else if (scenario.response.type === 'once') {
+				respondToAction(scenario, allData, 'once');
+				removeEventListeners();
 			} else if (scenario.response.type === 'last') {
 				respondToAction(scenario, allData, 'last', getBasicData);
 				removeEventListeners();

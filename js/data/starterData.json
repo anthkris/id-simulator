@@ -214,5 +214,134 @@
 			"type": "continue",
 			"goto": -1
 		}
-	}
+	},
+	{
+		"id": 22,
+		"character": "Philip Py",
+		"opportunity" : "I need an elearning course created. Are you available?",
+		"image": "/images/Philip.png",
+		"response": {
+			"type": "y/n",
+			"yes": 23,
+			"no": 24
+		}
+	},
+	{
+		"id": 23,
+		"character": "Philip Py",
+		"opportunity" : "How much will it cost? ... That much?!",
+		"image": "/images/Philip.png",
+		"rewards": {
+			"money": 500,
+			"happiness": 1,
+			"influence": 2,
+			"skill": 2
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 24,
+		"character": "Philip Py",
+		"opportunity" : "But it's great exposure!",
+		"image": "/images/Philip.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 0,
+			"influence": 0,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 25,
+		"character": "Jae Jackson",
+		"opportunity" : "We have 23 hours of compliance training to create, and it's critical that all the content from the SMEs be included.",
+		"image": "/images/Jae.png",
+		"response": {
+			"type": "y/n",
+			"yes": 26,
+			"no": 27
+		}
+	},
+	{
+		"id": 26,
+		"character": "Jae Jackson",
+		"opportunity" : "Great! We'll send it all over. Be sure it makes it in.",
+		"image": "/images/Jae.png",
+		"rewards": {
+			"money": 700,
+			"happiness": -1,
+			"influence": -1,
+			"skill": 1
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 27,
+		"character": "Jae Jackson",
+		"opportunity" : "Too bad. Too bad!",
+		"image": "/images/Jae.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 0,
+			"influence": 0,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 28,
+		"character": "Flor Flores",
+		"opportunity" : "We're looking for something really cutting edge: gamified adaptive VR microlearning with great UX. Also, our budget is $500.",
+		"image": "/images/Flor.png",
+		"response": {
+			"type": "y/n",
+			"yes": 29,
+			"no": 30
+		}
+	},
+	{
+		"id": 29,
+		"character": "Flor Flores",
+		"opportunity" : "Great! Looking forward to working with you!",
+		"image": "/images/Flor.png",
+		"rewards": {
+			"money": 500,
+			"happiness": -3,
+			"influence": -1,
+			"skill": 5
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 30,
+		"character": "Flor Flores",
+		"opportunity" : "Too technical for you, eh?",
+		"image": "/images/Flor.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 0,
+			"influence": 0,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
 ]
