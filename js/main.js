@@ -54,6 +54,8 @@ const setButtons = (scenario, allData) => {
 	continueButton.addEventListener('click', (e) => {
 		if (scenario.response.type === 'last') {
 			respondToAction(scenario, allData, 'last', getBasicData);
+		} else if (scenario.response.type === 'once') {
+			respondToAction(scenario, allData, 'once');
 		} else {
 			respondToAction(scenario, allData, 'continue');
 		}
@@ -117,6 +119,7 @@ const setButtons = (scenario, allData) => {
 			break;
 		case 'continue':
 		case 'last':
+		case 'once':
 			cardFooter.append(oneColumn);
 			break;
 	}
@@ -137,6 +140,13 @@ const respondToAction = (scenario, allData, type, func = () => {}) => {
 		case 'continue':
 			id = responseData.goto;
 			break;
+		case 'once':
+			id = responseData.goto;
+			// Delete once scenarios from data
+			allData.splice(findScenarioIndex(allData, scenario.id, "id"), 1);
+			allData.splice(findScenarioIndex(allData, scenario.response.delete[0], "id"), 1);
+			allData.splice(findScenarioIndex(allData, scenario.response.delete[1], "id"), 1);
+			break;
 		case 'last':
 			func();
 			return;
@@ -144,6 +154,7 @@ const respondToAction = (scenario, allData, type, func = () => {}) => {
 	}
 	if (id === -1) {
 		newText = randomScenario(allData);
+		console.log(newText);
 		setDataText(newText, allData);
 	} else {
 		newText = allData.find((data) => {
@@ -153,11 +164,23 @@ const respondToAction = (scenario, allData, type, func = () => {}) => {
 	}
 };
 
+const findScenarioIndex = (allData, value, param) => {
+	let found;
+    allData.filter((scenario, i) => {
+        if (scenario[param] === value) {
+            found = i;
+            console.log(scenario, found);
+            return;
+        };
+    })
+    return found;
+}
+
 const randomScenario = (allData) => {
 	// Return a psuedorandom scenario id 
 	// As long as that scenario is not a responseType of continue
 	const filteredData = allData.filter((scenario) => {
-		return scenario.response.type !== "continue";
+		return scenario.response.type !== "continue" && scenario.response.type !== "once" ;
 	});
 
 	const random = filteredData[Math.floor(Math.random()*filteredData.length)];

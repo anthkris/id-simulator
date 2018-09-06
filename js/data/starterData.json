@@ -152,6 +152,7 @@
 		},
 		"response": {
 			"type": "once",
+			"delete": [16, 18],
 			"goto": -1
 		}
 	},
