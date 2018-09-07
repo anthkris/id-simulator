@@ -31,7 +31,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     compress: true,
-    port: 9000
+    port: 5001
   },
   mode,
   plugins: [
