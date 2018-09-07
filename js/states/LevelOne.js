@@ -1,7 +1,7 @@
 let starters;
 
 const getBasicData = () => {
-	fetch('/js/data/starterData.json')
+	fetch('./data/starterData.json')
 		.then((response) => {
 			return response.json();
 		})
