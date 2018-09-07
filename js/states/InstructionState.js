@@ -6,8 +6,6 @@ export const STARTERDATA = {
 	"influence": 0
 };
 
-let instructions;
-
 export const createIcons = (starterData) => {
 	const cardHeader = document.getElementById('card-header');
 	cardHeader.setAttribute('class', 'columns is-mobile is-multiline');

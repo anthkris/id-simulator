@@ -203,6 +203,8 @@ const randomScenario = (allData) => {
 
 };
 
+let instructions;
+
 const getInstructionData = () => {
   fetch('./data/instructionData.json')
     .then((response) => {
