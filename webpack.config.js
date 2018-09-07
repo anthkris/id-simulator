@@ -30,7 +30,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
-    compress: true,
+    compress: prod ? true : false,
     port: 5001
   },
   mode,
