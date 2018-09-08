@@ -10,7 +10,7 @@ import idb from 'idb';
 
 console.log('idb', idb)
 
-const setDataText = (scenario, allData) => {
+export const setDataText = (scenario, allData) => {
 	const cardContent = document.getElementById('card-content');
 	const content = document.getElementById('content-div');
 	const contentText = document.getElementById('content-text');
@@ -191,7 +191,7 @@ const findScenarioIndex = (allData, value, param) => {
     return found;
 }
 
-const randomScenario = (allData) => {
+export const randomScenario = (allData) => {
 	// Return a psuedorandom scenario id
 	// As long as that scenario is not a responseType of continue
 	const filteredData = allData.filter((scenario) => {
