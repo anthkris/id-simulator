@@ -1,4 +1,16 @@
-const setDataText = (scenario, allData) => {
+import {
+  createIcons,
+  STARTERDATA,
+} from './states/InstructionState'
+import {
+  getBasicData,
+} from './states/LevelOne'
+import '../css/main.scss'
+import idb from 'idb';
+
+console.log('idb', idb)
+
+export const setDataText = (scenario, allData) => {
 	const cardContent = document.getElementById('card-content');
 	const content = document.getElementById('content-div');
 	const contentText = document.getElementById('content-text');
@@ -179,8 +191,8 @@ const findScenarioIndex = (allData, value, param) => {
     return found;
 }
 
-const randomScenario = (allData) => {
-	// Return a psuedorandom scenario id 
+export const randomScenario = (allData) => {
+	// Return a psuedorandom scenario id
 	// As long as that scenario is not a responseType of continue
 	const filteredData = allData.filter((scenario) => {
 		return scenario.response.type !== "continue" && scenario.response.type !== "once" ;
@@ -190,5 +202,25 @@ const randomScenario = (allData) => {
 	return random;
 
 };
+
+let instructions;
+
+const getInstructionData = () => {
+  fetch('./data/instructionData.json')
+    .then((response) => {
+      return response.json();
+    })
+    .then((instructions) => {
+      self.instructions = instructions;
+      setDataText(instructions[0], instructions);
+    });
+};
+
+const initGameUI = () => {
+  createIcons(STARTERDATA);
+  getInstructionData();
+};
+
+initGameUI();
 
 // TODO: Should be able to update stats based on yes or no

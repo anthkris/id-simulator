@@ -1,14 +1,12 @@
 
-const STARTERDATA = {
+export const STARTERDATA = {
 	"money": 1,
 	"happiness": 30,
 	"skill": 20,
 	"influence": 0
 };
 
-let instructions;
-
-const createIcons = (starterData) => {
+export const createIcons = (starterData) => {
 	const cardHeader = document.getElementById('card-header');
 	cardHeader.setAttribute('class', 'columns is-mobile is-multiline');
 
@@ -82,21 +80,3 @@ const createIcons = (starterData) => {
 	cardHeader.append(skillDiv);
 };
 
-const getInstructionData = () => {
-	fetch('/js/data/instructionData.json')
-		.then((response) => {
-			return response.json();
-		})
-		.then((instructions) => {
-			self.instructions = instructions;
-			setDataText(instructions[0], instructions);
-		});
-};
-
-
-const initGameUI = () => {
-	createIcons(STARTERDATA);
-	getInstructionData();
-};
-
-initGameUI();

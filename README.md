@@ -13,3 +13,28 @@ Build a business as a new instructional designer. You must last 5 in-game years 
 ## Credits
 
 - Icons: Doodle Library - https://www.thedoodlelibrary.com/
+
+## Build system
+
+__Dev__
+Spin up dev environment with hot reloading. Project in dev served on `localhost:5001`
+
+```
+cd <project folder>
+npm init
+npm run dev
+```
+
+__Build__
+
+```
+npm run build
+```
+
+__Serve__
+Production build is previewed(served) on `localhost:5000`
+
+```
+npm run serve
+```
+
