@@ -1,9 +1,9 @@
 # ID Simulator
-A yes/no game about being an instructional designer.
+An ES6, xAPI-enabled yes/no game about being an instructional designer.
 
 ## Inspiration
 
-- Reigns: UI (https://www.devolverdigital.com/games/view/reigns)
+- Reigns: UI and gameplay (https://www.devolverdigital.com/games/view/reigns)
 - Sort the Court: Yes/No mechanic and gameplay (https://graebor.itch.io/sort-the-court)
 
 ## Game Play
@@ -13,6 +13,12 @@ Build a business as a new instructional designer. You must last 5 in-game years 
 ## Credits
 
 - Icons: Doodle Library - https://www.thedoodlelibrary.com/
+
+## Contributors in Alpha Order
+
+- Kristin Anthony: https://www.knanthony.com/
+- Garrick Lee
+- Jacob Snover
 
 ## Build system
 
