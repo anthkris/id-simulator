@@ -1,7 +1,13 @@
+import {
+  setDataText,
+  randomScenario,
+} from '../main.js'
+
+
 let starters;
 
-const getBasicData = () => {
-	fetch('/js/data/starterData.json')
+export const getBasicData = () => {
+	fetch('./data/starterData.json')
 		.then((response) => {
 			return response.json();
 		})
