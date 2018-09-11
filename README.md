@@ -21,7 +21,7 @@ Spin up dev environment with hot reloading. Project in dev served on `localhost:
 
 ```
 cd <project folder>
-npm init
+npm install
 npm run dev
 ```
 
