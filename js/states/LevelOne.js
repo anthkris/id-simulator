@@ -1,7 +1,7 @@
 import {
   setDataText,
   randomScenario,
-} from '../main.js'
+} from '../main.js';
 
 
 let starters;

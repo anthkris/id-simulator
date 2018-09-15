@@ -1,4 +1,3 @@
-
 export const STARTERDATA = {
 	"money": 1,
 	"happiness": 30,
