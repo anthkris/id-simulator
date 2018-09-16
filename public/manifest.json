@@ -1,0 +1,22 @@
+{
+  "short_name": "ID-Simulator",
+  "name": "ID-Simulator with xAPI",
+  "description": "A fun simulator",
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
+  "icons": [{
+      "src": "/images/JeanLuc_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/JeanLuc_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "theme_color": "#242424",
+  "background_color": "#242424",
+  "gcm_sender_id": "3217212971"
+}
