@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
@@ -35,7 +36,12 @@ module.exports = {
   },
   mode,
   plugins: [
-    
+    new CopyWebpackPlugin([{
+      from: 'js/serviceworker.js',
+      to: './'
+    }], {
+      copyUnmodified: true,
+    })
   ],
   devtool: prod ? false : 'source-map'
 };
