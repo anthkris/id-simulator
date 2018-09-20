@@ -1,42 +1,77 @@
 import {
-  getBasicData
+  getLevelOneData
 } from './states/LevelOne';
 
+import {
+  respondToAction
+} from './main.js';
+
 // Keyboard navigation
-export const yKeyDown = (e, respondToAction, scenario, allData) => {
+const yKeyDown = (e, respondToAction, opportunity, allOpps) => {
     e.preventDefault();
     if (e.keyCode === 89) {
-        respondToAction(scenario, allData, 'yes');
-        removeEventListeners();
+        respondToAction(opportunity, allOpps, 'yes');
     }
 };
 
-export const nKeyDown = (e, respondToAction, scenario, allData) => {
+const nKeyDown = (e, respondToAction, opportunity, allOpps) => {
     e.preventDefault();
     if (e.keyCode === 78) {
-        respondToAction(scenario, allData, 'no');
-        removeEventListeners();
+        respondToAction(opportunity, allOpps, 'no');
     }
 };
 
-export const spaceKeyDown = (e, respondToAction, scenario, allData) => {
+const spaceKeyDown = (e, respondToAction, opportunity, allOpps, yesOrNo) => {
     e.preventDefault();
     if (e.keyCode === 32) {
-        if (scenario.response.type === 'continue') {
-            respondToAction(scenario, allData, 'continue');
-            removeEventListeners();
-        } else if (scenario.response.type === 'once') {
-            respondToAction(scenario, allData, 'once');
-            removeEventListeners();
-        } else if (scenario.response.type === 'last') {
-            respondToAction(scenario, allData, 'last', getBasicData);
-            removeEventListeners();
+        if (opportunity['response_type'].type === 'continue') {
+            respondToAction(opportunity, allOpps, 'continue');
+        } else if (opportunity['response_type'].type === 'last') {
+            respondToAction(opportunity, allOpps, 'last', getLevelOneData);
+        } else if (opportunity['response_type'].type === 'y/n' || opportunity[`response_${yesOrNo}`].goto) {
+            console.log(yesOrNo);
+            respondToAction(opportunity, allOpps, 'continue', null, opportunity[`response_${yesOrNo}`].goto);
+        } else {
+            respondToAction(opportunity, allOpps, 'continue', null, -1);
         }
     }
 };
 
+let yesHandler;
+let noHandler;
+let continueHandler;
+
+export const setEventListeners = (responseType, opportunity, allOpps, yesOrNo) => {
+    removeEventListeners();
+
+    yesHandler = (e) => { 
+        yKeyDown(e, respondToAction, opportunity, allOpps);
+    }
+    noHandler = (e) => {
+        nKeyDown(e, respondToAction, opportunity, allOpps);
+    }
+    continueHandler = (e) => {
+        spaceKeyDown(e, respondToAction, opportunity, allOpps, yesOrNo);
+    }
+    // Set Keyboard access
+    if (responseType === 'y/n') {
+        document.addEventListener('keydown', yesHandler, false);
+        document.addEventListener('keydown', noHandler, false);
+    }
+
+    if (responseType === 'continue') {
+        console.log('added space key event listener');
+        document.addEventListener('keydown', continueHandler, false);
+    }
+
+    if (responseType === 'last') {
+        document.addEventListener('keydown', continueHandler, false);
+    }
+}
+
 const removeEventListeners = () => {
-    document.removeEventListener('keydown', yKeyDown, false);
-    document.removeEventListener('keydown', nKeyDown, false);
-    document.removeEventListener('keydown', spaceKeyDown, false);
+    console.log('event listeners removed');
+    document.removeEventListener('keydown', yesHandler, false);
+    document.removeEventListener('keydown', noHandler, false);
+    document.removeEventListener('keydown', continueHandler, false);
 };

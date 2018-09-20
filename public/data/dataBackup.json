@@ -1,9 +1,13 @@
-[
-	{
+{
 		"id": 7,
 		"character": "Beau Blount",
 		"opportunity" : "Can you turn this PowerPoint into an elearning course?",
+		"status": "future",
 		"image": "/images/Beau.png",
+		"min": 0,
+		"max": 0.9,
+		"threshold": 0.7,
+		"maxImpact": 90,
 		"response": {
 			"type": "y/n",
 			"yes": 8,
@@ -46,6 +50,11 @@
 		"id": 10,
 		"character": "Alexa Avalos",
 		"opportunity" : "We'd like you to make a course with the Super Awesome Authoring tool. Can you do it?",
+		"status": "future",
+		"min": 0,
+		"max": 0,
+		"threshold": 1,
+		"maxImpact": 80,
 		"image": "/images/Alexa.png",
 		"response": {
 			"type": "y/n",
@@ -86,6 +95,151 @@
 		}
 	},
 	{
+		"id": 13,
+		"character": "Hannah Hatcher",
+		"opportunity" : "I'm a voice over artist. Let's connect on LinkingSocialNetwork!",
+		"status": "future",
+		"min": 0.1,
+		"max": 0.7,
+		"threshold": 0.5,
+		"maxImpact": 70,
+		"image": "/images/Hannah.png",
+		"response": {
+			"type": "y/n",
+			"yes": 14,
+			"no": 15
+		}
+	},
+	{
+		"id": 14,
+		"character": "Hannah Hatcher",
+		"opportunity" : "Great to connect!",
+		"image": "/images/Hannah.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 2,
+			"influence": 3,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 15,
+		"character": "Hannah Hatcher",
+		"opportunity" : "...",
+		"image": "/images/Hannah.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 0,
+			"influence": 0,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 16,
+		"character": "Matilda Manning, Advisor",
+		"image": "/images/Matilda.png",
+		"opportunity" : "It's a good time to start a blog. That will help you to build an audience.",
+		"status": "future",
+		"min": 0.1,
+		"max": 0.7,
+		"threshold": 0.5,
+		"maxImpact": 70,
+		"response": {
+			"type": "y/n",
+			"yes": 17,
+			"no": 18
+		}
+	},
+	{
+		"id": 17,
+		"character": "Matilda Manning, Advisor",
+		"opportunity" : "Good choice. Let's get you a domain name and some hosting.",
+		"image": "/images/Matilda.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 0,
+			"influence": 5,
+			"skill": 2
+		},
+		"response": {
+			"type": "once",
+			"delete": [16, 18],
+			"goto": -1
+		}
+	},
+	{
+		"id": 18,
+		"character": "Matilda Manning, Advisor",
+		"opportunity" : "I see... Think about it.",
+		"image": "/images/Matilda.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 0,
+			"influence": 0,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 19,
+		"character": "Vinay Voss",
+		"opportunity" : "I'm a voice over artist. Let's connect on LinkingSocialNetwork!",
+		"status": "future",
+		"min": 0.1,
+		"max": 0.7,
+		"threshold": 0.5,
+		"maxImpact": 30,
+		"image": "/images/Vinay.png",
+		"response": {
+			"type": "y/n",
+			"yes": 20,
+			"no": 21
+		}
+	},
+	{
+		"id": 20,
+		"character": "Vinay Voss",
+		"opportunity" : "Great to connect!",
+		"image": "/images/Vinay.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 2,
+			"influence": 3,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+	{
+		"id": 21,
+		"character": "Vinay Voss",
+		"opportunity" : "...",
+		"image": "/images/Vinay.png",
+		"rewards": {
+			"money": 0,
+			"happiness": 0,
+			"influence": 0,
+			"skill": 0
+		},
+		"response": {
+			"type": "continue",
+			"goto": -1
+		}
+	},
+{
 		"id": 13,
 		"character": "Hannah Hatcher",
 		"opportunity" : "I'm a voice over artist. Let's connect on LinkingSocialNetwork!",
@@ -344,4 +498,3 @@
 			"goto": -1
 		}
 	}
-]

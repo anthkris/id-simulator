@@ -1,0 +1,74 @@
+export const createIcons = (starterData) => {
+	const cardHeader = document.getElementById('card-header');
+	cardHeader.setAttribute('class', 'columns is-mobile is-multiline');
+
+	const moneyDiv = document.createElement('div');
+	moneyDiv.setAttribute('id', 'money');
+	moneyDiv.setAttribute('class', 'column is-half');
+	const moneyInnerDiv = document.createElement('div');
+	moneyInnerDiv.setAttribute('class', 'tag is-rounded is-large');
+	const moneyIcon = document.createElement('img');
+	moneyIcon.setAttribute('src', '/icons/money.svg');
+	moneyIcon.setAttribute('alt', 'Your money');
+	moneyIcon.setAttribute('class', 'heading-icon money-icon');
+	const moneyText = document.createElement('span');
+	moneyText.setAttribute('id', 'money-text');
+	moneyText.innerHTML = `${starterData.money}`;
+	moneyInnerDiv.append(moneyIcon);
+	moneyInnerDiv.append('$');
+	moneyInnerDiv.append(moneyText);
+	moneyDiv.append(moneyInnerDiv);
+
+	const healthDiv = document.createElement('div');
+	healthDiv.setAttribute('id', 'health');
+	healthDiv.setAttribute('class', 'column is-half');
+	const healthInnerDiv = document.createElement('div');
+	healthInnerDiv.setAttribute('class', 'tag is-rounded is-large');
+	const healthIcon = document.createElement('img');
+	healthIcon.setAttribute('src', '/icons/health.svg');
+	healthIcon.setAttribute('alt', 'Health');
+	healthIcon.setAttribute('class', 'heading-icon health-icon');
+	const healthText = document.createElement('span');
+	healthText.setAttribute('id', 'health-text');
+	healthText.innerHTML = `${starterData.health}`;
+	healthInnerDiv.append(healthIcon);
+	healthInnerDiv.append(healthText);
+	healthDiv.append(healthInnerDiv);
+
+	const workloadDiv = document.createElement('div');
+	workloadDiv.setAttribute('id', 'workload');
+	workloadDiv.setAttribute('class', 'column is-half');
+	const workloadInnerDiv = document.createElement('div');
+	workloadInnerDiv.setAttribute('class', 'tag is-rounded is-large');
+	const workloadIcon = document.createElement('img');
+	workloadIcon.setAttribute('src', '/icons/workload.svg');
+	workloadIcon.setAttribute('alt', 'Workload');
+	workloadIcon.setAttribute('class', 'heading-icon health-icon');
+	const workloadText = document.createElement('span');
+	workloadText.setAttribute('id', 'workload-text');
+	workloadText.innerHTML = `${starterData.workload}`;
+	workloadInnerDiv.append(workloadIcon);
+	workloadInnerDiv.append(workloadText);
+	workloadDiv.append(workloadInnerDiv);
+
+	const reputationDiv = document.createElement('div');
+	reputationDiv.setAttribute('id', 'rep');
+	reputationDiv.setAttribute('class', 'column is-half');
+	const reputationInnerDiv = document.createElement('div');
+	reputationInnerDiv.setAttribute('class', 'tag is-rounded is-large');
+	const reputationIcon = document.createElement('img');
+	reputationIcon.setAttribute('src', '/icons/ratings.svg');
+	reputationIcon.setAttribute('alt', 'Reputation');
+	reputationIcon.setAttribute('class', 'heading-icon reputation-icon');
+	const reputationText = document.createElement('span');
+	reputationText.setAttribute('id', 'reputation-text');
+	reputationText.innerHTML = `${starterData.reputation}`;
+	reputationInnerDiv.append(reputationIcon);
+	reputationInnerDiv.append(reputationText);
+	reputationDiv.append(reputationInnerDiv);
+
+	cardHeader.append(moneyDiv);
+	cardHeader.append(healthDiv);
+	cardHeader.append(workloadDiv);
+	cardHeader.append(reputationDiv);
+};

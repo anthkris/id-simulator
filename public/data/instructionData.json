@@ -4,39 +4,27 @@
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "Hello! I'll help you run your instructional design company. But you'll have decide which opportunities to take and which to leave alone. Got it?",
 		"image": "/images/Matilda.png",
-		"response": {
-			"type": "y/n",
-			"yes": 1,
-			"no": 2
-		}
-	},
-	{	
-		"id": 1,
-		"character": "Matilda Manning, Advisor",
-		"opportunity" : "Great. You're a smart one. We'll get along just fine.",
-		"image": "/images/Matilda.png",
-		"response": {
-			"type": "continue",
+		"response_type": {
+			"type": "y/n"
+		},
+		"response_yes": {
+			"response_text": "Great. You're a smart one. We'll get along just fine.",
 			"goto": 3
-		}
-	},
-	{
-		"id": 2,
-		"character": "Matilda Manning, Advisor",
-		"opportunity" : "So very amusing... Look, just focus, okay?",
-		"image": "/images/Matilda.png",
-		"response": {
-			"type": "continue",
-			"goto": 3
-		}
+		},
+		"response_no": {
+			"response_text": "So very amusing... Look, just focus, okay?",
+		 	"goto": 3
+		 }
 	},
 	{
 		"id": 3,
 		"character": "Matilda Manning, Advisor",
-		"opportunity" : "You're just starting out now so your funds, client happiness, influence and skills are at a minimum. You have lots of potential to grow as an ID and as a business.",
+		"opportunity" : "You're just starting out now so your money, health, workload, and reputation are at a minimum. You have lots of potential to grow as an ID and as a business.",
 		"image": "/images/Matilda.png",
-		"response": {
-			"type": "continue",
+		"response_type": {
+			"type": "continue"
+		},
+		"response_continue": {
 			"goto": 4
 		}
 	},
@@ -45,8 +33,10 @@
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "Maybe one day you'll earn your CPPMPLP and be invited to join the Thot Leader's Club!",
 		"image": "/images/Matilda.png",
-		"response": {
-			"type": "continue",
+		"response_type": {
+			"type": "continue"
+		},
+		"response_continue": {
 			"goto": 5
 		}
 	},
@@ -55,8 +45,10 @@
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "For now, you should focus on growing your business and influence and keeping your clients happy.",
 		"image": "/images/Matilda.png",
-		"response": {
-			"type": "continue",
+		"response_type": {
+			"type": "continue"
+		},
+		"response_continue": {
 			"goto": 6
 		}
 	},
@@ -65,7 +57,7 @@
 		"character": "Matilda Manning, Advisor",
 		"opportunity" : "Let's get to work!",
 		"image": "/images/Matilda.png",
-		"response": {
+		"response_type": {
 			"type": "last"
 		}
 	}

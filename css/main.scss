@@ -156,3 +156,17 @@ AND https://daverupert.com/2015/12/intrinsic-placeholders-with-picture/ */
 	margin-right: 5px;
 	width: 35px;
 }
+
+#money .tag, 
+#health .tag,
+#workload .tag, 
+#rep .tag {
+	justify-content: flex-start;
+}
+
+#money img, 
+#health img,
+#workload img, 
+#rep img {
+	padding-right: 10px;
+} 

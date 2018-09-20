@@ -13,6 +13,9 @@ Build a business as a new instructional designer. You must last 5 in-game years 
 ## Credits
 
 - Icons: Doodle Library - https://www.thedoodlelibrary.com/
+- Noun Project
+  - Stars, Money, Health: Deemak Daksina (https://thenounproject.com/deemakdaksina/)
+  - 
 
 ## Contributors in Alpha Order
 

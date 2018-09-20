@@ -1,39 +1,13 @@
-export const updateMoneyStats = (scenario) => {
-    var str = document.getElementById('money-text').innerHTML; //grab current value
-
-    //don't need this check if not using decimals comment/uncomment to see difference
-    //var thousand = str.indexOf('K') > -1; //see if current value is over 1,000
-
-    var tempMoney = str.replace(new RegExp('\\$|\\.|\\,|K', 'g'), ''); //remove special chars
-    if (typeof scenario.rewards !== 'undefined') //make sure there is value to add and then display correctly
-    {
-        if (tempMoney.length > 1) {
-            //this produces a decimal value comment/uncomment to see difference
-            //str = (thousand && parseInt(scenario.rewards.money) > 0) ? (parseInt(tempMoney * 100) + parseInt(scenario.rewards.money)) / 1000 : parseInt(tempMoney * 100) / 1000;
-
-            //this produces a non decimal value comment/uncomment to see difference
-            str = (parseInt(scenario.rewards.money) > 0) ? (parseInt(tempMoney) + parseInt(scenario.rewards.money)) : parseInt(tempMoney);
-        }
-        else {
-            //this produces a decimal value comment/uncomment to see difference
-            //str = (thousand && parseInt(scenario.rewards.money) > 0) ? (parseInt(tempMoney * 1000) + parseInt(scenario.rewards.money)) / 1000 : parseInt(tempMoney * 1000) / 1000;
-
-            //this produces a decimal value comment/uncomment to see difference
-            str = (parseInt(scenario.rewards.money) > 0) ? (parseInt(tempMoney * 1000) + parseInt(scenario.rewards.money)) : parseInt(tempMoney * 1000);
-        }
+const updateMoneyStats = (opportunity) => {
+    console.log('opportunity for money stats', opportunity)
+    const moneyText = document.getElementById('money-text');
+    console.log(moneyText.innerHTML);
+    if (typeof opportunity.rewards !== 'undefined') {
+        const newMoney = parseInt(moneyText.innerHTML) + parseInt(opportunity.rewards.money);
+        moneyText.innerHTML = newMoney;
+        console.log(newMoney);
+        return newMoney;
     }
-    //don't need this if using decimal values for display
-    else if (tempMoney.length < 2) {
-        str = tempMoney * 1000;
-    }
-    else
-        str = tempMoney;
-
-    //this will display the decimal value
-    //document.getElementById('money-text').innerHTML = '$' + str + 'K';
-
-    //this will display the non decimal value
-    document.getElementById('money-text').innerHTML = formatter.format(str);
 };
 
 //this method formats the money string as a cerrency
@@ -43,23 +17,42 @@ const formatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 0
 });
 
-export const updateHappinessStats = (scenario) => {
+const updateHealthStats = (opportunity) => {
+    const healthText = document.getElementById('health-text');
     //checks to make sure there is an actual value to update with, leave alone if there is no value
-    if (typeof scenario.rewards !== 'undefined') {
-        document.getElementById('happy-text').innerHTML = parseInt(document.getElementById('happy-text').innerHTML) + parseInt(scenario.rewards.happiness);
+    if (typeof opportunity.rewards !== 'undefined') {
+        const newHealth = parseInt(healthText.innerHTML) + parseInt(opportunity.rewards.health);
+        healthText.innerHTML = newHealth;
+        return newHealth;
     }
 };
 
-export const updateInfluenceStats = (scenario) => {
+const updateWorkloadStats = (opportunity) => {
+    const workloadText = document.getElementById('workload-text');
     //checks to make sure there is an actual value to update with, leave alone if there is no value
-    if (typeof scenario.rewards !== 'undefined') {
-        document.getElementById('influence-text').innerHTML = parseInt(document.getElementById('influence-text').innerHTML) + parseInt(scenario.rewards.influence);
+    if (typeof opportunity.rewards !== 'undefined') {
+        const newWorkload = parseInt(workloadText.innerHTML) + parseInt(opportunity.rewards.workload);
+        workloadText.innerHTML = newWorkload;
+        return newWorkload;
     }
 };
 
-export const updateSkillStats = (scenario) => {
-
-    if (typeof scenario.rewards !== 'undefined') {
-        document.getElementById('skill-text').innerHTML = parseInt(document.getElementById('skill-text').innerHTML) + parseInt(scenario.rewards.skill);
+const updateReputationStats = (opportunity) => {
+    const reputationText = document.getElementById('reputation-text');
+    if (typeof opportunity.rewards !== 'undefined') {
+        const newReputation = parseInt(reputationText.innerHTML) + parseInt(opportunity.rewards.reputation);
+        reputationText.innerHTML = newReputation;
+        return newReputation;
     }
+};
+
+// Update stats based on choice
+export const updateStats = (opportunity) => {
+    return {
+        "money": updateMoneyStats(opportunity),
+        "health": updateHealthStats(opportunity),
+        "workload": updateWorkloadStats(opportunity),
+        "reputation": updateReputationStats(opportunity)
+    }
+
 };

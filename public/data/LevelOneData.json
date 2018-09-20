@@ -1,0 +1,92 @@
+[
+	{
+        "id": 7,
+        "character": "Beau Blount",
+        "opportunity" : "Can you turn this PowerPoint into an elearning course?",
+        "status": "future",
+        "image": "/images/Beau.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 2,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 10,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text":"Amazing! We'll get the files over to you immediately.",
+	        "rewards": {
+	           "money": 500,
+	           "health": 0,
+	           "workload": 2,
+	           "reputation": 1
+	        },
+	        "impact" : {},
+	        "goto": -1
+        },
+        "response_no": {
+	        "response_text":"Too bad... Maybe another time.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {},
+	        "goto": -1
+        }
+    },
+    {
+        "id": 8,
+        "character": "Alexa Avalos",
+        "opportunity" : "We'd like you to make a course with the Super Awesome Authoring tool. Can you do it?",
+        "status": "future",
+        "image": "/images/Alexa.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 2,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 10,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text":"Great! You have your own subpscription to Super Awesome Authoring tool, right?",
+	        "rewards": {
+	           "money": 500,
+	           "health": 0,
+	           "workload": 2,
+	           "reputation": 1
+	        },
+	        "impact" : {},
+	        "goto": -1
+        },
+        "response_no": {
+	        "response_text":"Well, we'll get someone else.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {},
+	        "goto": -1
+        }
+    }
+]
