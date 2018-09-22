@@ -1,5 +1,8 @@
 import {
-  createIcons
+  createIcons,
+  setYesButton,
+  setNoButton,
+  setContinueButton
 } from './GUI';
 import {
   getInstructionData,
@@ -8,7 +11,9 @@ import {
   updateStats
 } from './Stats';
 import {
-  setEventListeners
+  setEventListeners,
+  setClickListeners,
+  setMouseEnterListeners
 } from './Input';
 import {
   getLevelOneData
@@ -84,70 +89,20 @@ export const setDataText = (opportunity, allOpps) => {
 
     personaName.innerHTML = `<p>${opportunity.character}</p>`;
 
-    setButtons(opportunity, allOpps);
+    if (opportunity.status) {
+        opportunity.status = 'present';
+    }
+
+    setButtons(opportunity['response_type'].type, opportunity, allOpps);
 };
 
-const setYesButton = (opportunity, allOpps) => {
-    const leftColumn = document.createElement('div');
-    leftColumn.setAttribute('class', 'column');
-    const yesButton = document.createElement('button');
-    yesButton.setAttribute('class', 'button green-button is-fullwidth');
-    yesButton.innerHTML = 'Yes';
-    yesButton.addEventListener('click', (e) => {
-        console.log(allOpps);
-        respondToAction(opportunity, allOpps, 'yes');
-    });
-    leftColumn.append(yesButton);
-    return leftColumn;
-}
-
-const setNoButton = (opportunity, allOpps) => {
-    const rightColumn = document.createElement('div');
-    rightColumn.setAttribute('class', 'column');
-    const noButton = document.createElement('button');
-    noButton.setAttribute('class', 'button red-button is-fullwidth');
-    noButton.innerHTML = 'No';
-    noButton.addEventListener('click', (e) => {
-        respondToAction(opportunity, allOpps, 'no');
-    });
-    rightColumn.append(noButton);
-    return rightColumn;
-}
-
-
-const setContinueButton = (opportunity, allOpps, goto) => {
-    // TODO: Continue button needs to be more flexible
-    // Should handle case of specific goto id and case of continuing from yes/no action
-    const oneColumn = document.createElement('div');
-    oneColumn.setAttribute('class', 'column');
-    const continueButton = document.createElement('button');
-    continueButton.setAttribute('class', 'button blue-button is-fullwidth');
-    continueButton.innerHTML = 'Continue';
-    continueButton.addEventListener('click', (e) => {
-        if (opportunity['response_type'].type === 'last') {
-            respondToAction(opportunity, allOpps, 'last', getLevelOneData);
-        } else if (opportunity['response_type'].type === 'continue'){
-            respondToAction(opportunity, allOpps, 'continue', null, goto);
-        } else if (opportunity['response_type'].type === 'y/n') {
-            console.log(goto);
-            respondToAction(opportunity, allOpps, 'continue', null, goto);
-        }
-    });
-    oneColumn.append(continueButton);
-    return oneColumn;
-}
-
-
-const setButtons = (opportunity, allOpps) => {
+const setButtons = (responseType, opportunity, allOpps, yesOrNo) => {
     const cardFooter = document.getElementById('card-footer');
     cardFooter.setAttribute('class', 'columns');
     // Clear
     cardFooter.innerHTML = '';
     
-    console.log(opportunity['response_type'].type);
-    setEventListeners(opportunity['response_type'].type, opportunity, allOpps);
-    
-    switch (opportunity['response_type'].type) {
+    switch (responseType) {
         case 'y/n':
             cardFooter.append(setYesButton(opportunity, allOpps));
             cardFooter.append(setNoButton(opportunity, allOpps));
@@ -157,89 +112,118 @@ const setButtons = (opportunity, allOpps) => {
             cardFooter.append(setContinueButton(opportunity, allOpps));
             break;
     }
+
+    setEventListeners(responseType, opportunity, allOpps, yesOrNo);
+    setClickListeners(responseType, opportunity, allOpps, yesOrNo);
+    setMouseEnterListeners(responseType, opportunity, allOpps, yesOrNo);
 };
 
-const continueAfterChoice = (response, id, opportunity, allOpps, yesOrNo) => {
+// On click yes or no,
+// Show updated text and continue button
+
+const updateAfterChoice = (response, opportunity, allOpps, yesOrNo) => {
     let nextOpp;
     const contentText = document.getElementById('content-text');
     contentText.innerHTML = response['response_text'];
 
-    const cardFooter = document.getElementById('card-footer');
-    cardFooter.setAttribute('class', 'columns');
-    cardFooter.innerHTML = '';
-
-    // TODO: The spacebar isn't working for these
-    setEventListeners('continue', opportunity, allOpps, yesOrNo);
+    if (opportunity.status) {
+        opportunity.status = 'past';
+    }
 
     // Update stats if possible
+    // Update workload by subtracting current workload after duration
     if (response.rewards !== undefined) {
-        playerStats = updateStats(response);
+        playerStats = updateStats(response, opportunity, playerStats);
     }
 
     // Update reuse.used and reuse.last_used
-
-    // If turns, spread out consequences over turns
-
-    // Update workload by subtracting current workload after duration
-
-    if (response.goto === undefined || response.goto === -1) {
-        nextOpp = randomOpportunity(allOpps, playerStats);
-    } else {
-        nextOpp = findMatchingOpp(allOpps, id);
+    if (opportunity['reuse'] !== undefined) {
+        console.log('got a real yes/no opportunity');
+        // Increment global turns once we get a real opportunity
+        globalTurns++;
+        if(yesOrNo === 'yes') {
+            opportunity['reuse'].used++;
+            opportunity['reuse']['last_used'] = globalTurns;
+        }
     }
-    if (response.goto !== undefined) {
-        console.log(response.goto)
-        cardFooter.append(setContinueButton(nextOpp, allOpps, response.goto));
-    } else {
-        cardFooter.append(setContinueButton(nextOpp, allOpps, -1));
-    }
+
+    console.log(opportunity)
+
+    setButtons('continue', opportunity, allOpps, yesOrNo);
     
 };
 
-export const respondToAction = (opportunity, allOpps, type, func = () => { }, goto) => {
+
+// On click continue button, go to goto
+
+export const respondToAction = (responseType, opportunity, allOpps, yesOrNo, func) => {
     let nextOpp;
     let id;
+    console.log(func);
 
-    if (goto && goto !== -1) {
-        nextOpp = findMatchingOpp(allOpps, goto);
-        setDataText(nextOpp, allOpps);
+    if (responseType === 'last') {
+        // Passing function name as a string, so need to get the real function
+        switch (func) {
+            case "getLevelOneData": getLevelOneData(); break;
+        }
         return;
     }
 
-    switch (type) {
-        case 'yes':
-            id = opportunity['response_yes'].goto || -1;
-            continueAfterChoice(opportunity['response_yes'], id, opportunity, allOpps, 'yes');
-            return;
-            break;
-        case 'no':
-            id = opportunity['response_no'].goto || -1;
-            continueAfterChoice(opportunity['response_yes'], id, opportunity, allOpps, 'no');
-            return;
-            break;
-        case 'continue':
-            if (opportunity['response_continue']) {
-                id = opportunity['response_continue'].goto;
-                nextOpp = findMatchingOpp(allOpps, id);
-            } else {
-                console.log('is it random?')
-                nextOpp = randomOpportunity(allOpps, playerStats);
-            }
-            console.log(id);
-            setDataText(nextOpp, allOpps);
-            break;
-        case 'last':
-            func();
-            return;
-            break;
+    if (responseType === 'y/n') {
+        updateAfterChoice(opportunity[`response_${yesOrNo}`], opportunity, allOpps);
+        return;
     }
+
+    if (responseType === 'continue' && opportunity['go_to_step']) {
+        id = opportunity['go_to_step'];
+        nextOpp = findMatchingOpp(allOpps, id);
+    } else {
+        console.log('is it random?')
+        nextOpp = randomOpportunity(allOpps, playerStats);
+    }
+
+    setDataText(nextOpp, allOpps);
+
+    // if (goto && goto !== -1) {
+    //     nextOpp = findMatchingOpp(allOpps, goto);
+    //     setDataText(nextOpp, allOpps);
+    //     return;
+    // }
+
+    // switch (type) {
+    //     case 'yes':
+    //         id = opportunity['response_yes'].goto || -1;
+    //         updateAfterChoice(opportunity['response_yes'], id, opportunity, allOpps, 'yes');
+    //         return;
+    //         break;
+    //     case 'no':
+    //         id = opportunity['response_no'].goto || -1;
+    //         updateAfterChoice(opportunity['response_yes'], id, opportunity, allOpps, 'no');
+    //         return;
+    //         break;
+    //     case 'continue':
+    //         if (opportunity['response_continue']) {
+    //             id = opportunity['response_continue'].goto;
+    //             nextOpp = findMatchingOpp(allOpps, id);
+    //         } else {
+    //             console.log('is it random?')
+    //             nextOpp = randomOpportunity(allOpps, playerStats);
+    //         }
+    //         console.log(id);
+    //         setDataText(nextOpp, allOpps);
+    //         break;
+    //     case 'last':
+    //         func();
+    //         return;
+    //         break;
+    // }
 };
 
 const findMatchingOpp = (allOpps, id) => {
    return allOpps.find((data) => {
         return data.id === id;
     });
-}
+};
 
 const findOpportunityIndex = (allOpps, value, param) => {
     let found;
@@ -255,14 +239,13 @@ const findOpportunityIndex = (allOpps, value, param) => {
 
 
 export const randomOpportunity = (allOpps, stats = playerStats) => {
-    console.log(stats)
+    console.log(stats, allOpps);
     // Return a psuedorandom opportunity id
     // As long as that opportunity is not a responseType of continue
     const filteredData = filterOpps(allOpps, stats);
 
     const random = filteredData[Math.floor(Math.random() * filteredData.length)];
     return random;
-
 };
 
 const filterOpps = (allOpps, stats) => {

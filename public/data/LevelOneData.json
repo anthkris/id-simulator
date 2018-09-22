@@ -29,8 +29,7 @@
 	           "workload": 2,
 	           "reputation": 1
 	        },
-	        "impact" : {},
-	        "goto": -1
+	        "impact" : {}
         },
         "response_no": {
 	        "response_text":"Too bad... Maybe another time.",
@@ -40,8 +39,7 @@
 				"workload": 0,
 				"reputation": 0
 	        },
-	        "impact": {},
-	        "goto": -1
+	        "impact": {}
         }
     },
     {
@@ -74,8 +72,7 @@
 	           "workload": 2,
 	           "reputation": 1
 	        },
-	        "impact" : {},
-	        "goto": -1
+	        "impact" : {}
         },
         "response_no": {
 	        "response_text":"Well, we'll get someone else.",
@@ -85,8 +82,179 @@
 				"workload": 0,
 				"reputation": 0
 	        },
-	        "impact": {},
-	        "goto": -1
+	        "impact": {}
+        }
+    },
+    {
+        "id": 9,
+        "character": "Hannah Hatcher",
+        "opportunity" : "I'm a voice over artist. Let's connect on LinkingSocialNetwork!",
+        "status": "future",
+        "image": "/images/Hannah.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 1,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 10,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text":"Great to connect!",
+	        "rewards": {
+	           "money": 0,
+	           "health": 0,
+	           "workload": 0,
+	           "reputation": 1
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text":"...",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 10,
+        "character": "Matilda Manning, Advisor",
+        "opportunity" : "It's a good time to start a blog and website. That will help you to build an audience.",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 5,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 1,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 0
+        },
+        "response_yes": {
+	        "response_text": "Good choice. Let's get you a domain name and some hosting.",
+	        "rewards": {
+	           "money": -100,
+	           "health": 0,
+	           "workload": 2,
+	           "reputation": 5
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "I see... Think about it.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 11,
+        "character": "Philip Py",
+        "opportunity" : "I need an elearning course created. Are you available?",
+        "status": "future",
+        "image": "/images/Philip.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 2,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 10,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text":"How much will it cost? ... That much?!",
+	        "rewards": {
+	           "money": 500,
+	           "health": 0,
+	           "workload": 2,
+	           "reputation": 1
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "But it's great exposure!",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 12,
+        "character": "Flor Flores",
+        "opportunity" : "We're looking for something really cutting edge: gamified adaptive VR microlearning with great UX. Also, our budget is $500.",
+        "status": "future",
+        "image": "/images/Flor.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 6,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 10,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "Great! Looking forward to working with you!",
+	        "rewards": {
+	           "money": 500,
+	           "health": -5,
+	           "workload": 4,
+	           "reputation": 3
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Too technical for you, eh?",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
         }
     }
 ]

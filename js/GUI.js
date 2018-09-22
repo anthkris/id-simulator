@@ -1,7 +1,4 @@
-export const createIcons = (starterData) => {
-	const cardHeader = document.getElementById('card-header');
-	cardHeader.setAttribute('class', 'columns is-mobile is-multiline');
-
+const createMoneyIcon = (starterData) => {
 	const moneyDiv = document.createElement('div');
 	moneyDiv.setAttribute('id', 'money');
 	moneyDiv.setAttribute('class', 'column is-half');
@@ -19,6 +16,10 @@ export const createIcons = (starterData) => {
 	moneyInnerDiv.append(moneyText);
 	moneyDiv.append(moneyInnerDiv);
 
+	return moneyDiv;
+};
+
+const createHealthIcon = (starterData) => {
 	const healthDiv = document.createElement('div');
 	healthDiv.setAttribute('id', 'health');
 	healthDiv.setAttribute('class', 'column is-half');
@@ -35,6 +36,10 @@ export const createIcons = (starterData) => {
 	healthInnerDiv.append(healthText);
 	healthDiv.append(healthInnerDiv);
 
+	return healthDiv;
+}
+
+const createWorkloadIcon = (starterData) => {
 	const workloadDiv = document.createElement('div');
 	workloadDiv.setAttribute('id', 'workload');
 	workloadDiv.setAttribute('class', 'column is-half');
@@ -51,6 +56,10 @@ export const createIcons = (starterData) => {
 	workloadInnerDiv.append(workloadText);
 	workloadDiv.append(workloadInnerDiv);
 
+	return workloadDiv;
+}
+
+const createReputationIcon = (starterData) => {
 	const reputationDiv = document.createElement('div');
 	reputationDiv.setAttribute('id', 'rep');
 	reputationDiv.setAttribute('class', 'column is-half');
@@ -67,8 +76,55 @@ export const createIcons = (starterData) => {
 	reputationInnerDiv.append(reputationText);
 	reputationDiv.append(reputationInnerDiv);
 
-	cardHeader.append(moneyDiv);
-	cardHeader.append(healthDiv);
-	cardHeader.append(workloadDiv);
-	cardHeader.append(reputationDiv);
+	return reputationDiv;
+}
+
+export const createIcons = (starterData) => {
+	const cardHeader = document.getElementById('card-header');
+	cardHeader.setAttribute('class', 'columns is-mobile is-multiline');
+
+	cardHeader.append(createMoneyIcon(starterData));
+	cardHeader.append(createHealthIcon(starterData));
+	cardHeader.append(createWorkloadIcon(starterData));
+	cardHeader.append(createReputationIcon(starterData));
 };
+
+export const setYesButton = (opportunity, allOpps) => {
+    const leftColumn = document.createElement('div');
+    leftColumn.setAttribute('class', 'column');
+    const yesButton = document.createElement('button');
+    yesButton.setAttribute('id', 'yes-button');
+    yesButton.setAttribute('class', 'button green-button is-fullwidth');
+    yesButton.innerHTML = 'Yes';
+    leftColumn.append(yesButton);
+    return leftColumn;
+};
+
+export const setNoButton = (opportunity, allOpps) => {
+    const rightColumn = document.createElement('div');
+    rightColumn.setAttribute('class', 'column');
+    const noButton = document.createElement('button');
+    noButton.setAttribute('id', 'no-button');
+    noButton.setAttribute('class', 'button red-button is-fullwidth');
+    noButton.innerHTML = 'No';
+    rightColumn.append(noButton);
+    return rightColumn;
+};
+
+export const setContinueButton = (opportunity, allOpps, goto) => {
+    // TODO: Continue button needs to be more flexible
+    // Should handle case of specific goto id and case of continuing from yes/no action
+    const oneColumn = document.createElement('div');
+    oneColumn.setAttribute('class', 'column');
+    const continueButton = document.createElement('button');
+    continueButton.setAttribute('id', 'continue-button');
+    continueButton.setAttribute('class', 'button blue-button is-fullwidth');
+    continueButton.innerHTML = 'Continue';
+    oneColumn.append(continueButton);
+    return oneColumn;
+};
+
+const previewConsequences = (opportunity) => {
+
+};
+

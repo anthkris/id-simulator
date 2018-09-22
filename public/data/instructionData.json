@@ -8,13 +8,12 @@
 			"type": "y/n"
 		},
 		"response_yes": {
-			"response_text": "Great. You're a smart one. We'll get along just fine.",
-			"goto": 3
+			"response_text": "Great. You're a smart one. We'll get along just fine."
 		},
 		"response_no": {
-			"response_text": "So very amusing... Look, just focus, okay?",
-		 	"goto": 3
-		 }
+			"response_text": "So very amusing... Look, just focus, okay?"
+		 },
+		 "go_to_step": 3
 	},
 	{
 		"id": 3,
@@ -24,9 +23,7 @@
 		"response_type": {
 			"type": "continue"
 		},
-		"response_continue": {
-			"goto": 4
-		}
+		"go_to_step": 4
 	},
 	{
 		"id": 4,
@@ -36,9 +33,7 @@
 		"response_type": {
 			"type": "continue"
 		},
-		"response_continue": {
-			"goto": 5
-		}
+		"go_to_step": 5
 	},
 	{
 		"id": 5,
@@ -48,9 +43,7 @@
 		"response_type": {
 			"type": "continue"
 		},
-		"response_continue": {
-			"goto": 6
-		}
+		"go_to_step": 6
 	},
 	{
 		"id": 6,
@@ -58,7 +51,8 @@
 		"opportunity" : "Let's get to work!",
 		"image": "/images/Matilda.png",
 		"response_type": {
-			"type": "last"
+			"type": "last",
+			"func": "getLevelOneData"
 		}
 	}
 ]
