@@ -294,5 +294,15 @@ if ("serviceWorker" in navigator) {
   });
 }
 
+const installButton = document.getElementById('installer')
+
+window.addEventListener("beforeinstallprompt", function (install_event) {
+  install_event.preventDefault(); // Prevents immediate prompt display
+  installButton.addEventListener("click", function (e) {
+    install_event.prompt();
+  });
+  installButton.hidden = false; // Make button operable
+});
+
 initGameUI();
 
