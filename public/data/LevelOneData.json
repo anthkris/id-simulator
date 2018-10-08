@@ -140,7 +140,7 @@
         	"workload": null,
         	"reputation": 0
         },
-        "duration": 5,
+        "duration": 10,
         "response_type": {
             "type": "y/n"
          },
@@ -158,7 +158,12 @@
 	           "workload": 2,
 	           "reputation": 5
 	        },
-	        "impact" : {}
+	        "impact" : {
+	        	"opp1": {
+	        		"id": 18,
+	        		"status": "future"
+	        	}
+	        }
         },
         "response_no": {
 	        "response_text": "I see... Think about it.",
@@ -218,7 +223,7 @@
         "id": 12,
         "character": "Flor Flores",
         "opportunity" : "We're looking for something really cutting edge: gamified adaptive VR microlearning with great UX. Also, our budget is $500.",
-        "status": "future",
+        "status": "past",
         "image": "/images/Flor.png",
         "threshold": {
         	"money": 0,
@@ -226,7 +231,7 @@
         	"workload": null,
         	"reputation": 0
         },
-        "duration": 6,
+        "duration": 2,
         "response_type": {
             "type": "y/n"
          },
@@ -241,13 +246,1483 @@
 	        "rewards": {
 	           "money": 500,
 	           "health": -5,
-	           "workload": 4,
+	           "workload": 6,
 	           "reputation": 3
 	        },
 	        "impact" : {}
         },
         "response_no": {
 	        "response_text": "Too technical for you, eh?",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 13,
+        "character": "Jae Jackson",
+        "opportunity" : "We have 23 hours of compliance training to create, and it's critical that all the content from the SMEs be included.",
+        "status": "future",
+        "image": "/images/Jae.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 2,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 5,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "Great! We'll send it all over. Be sure it makes it in.",
+	        "rewards": {
+	           "money": 3000,
+	           "health": -2,
+	           "workload": 4,
+	           "reputation": 1
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Too bad. Too bad!",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 14,
+        "character": "Lillian Le",
+        "opportunity" : "We have a problem with our salespeople. They aren't closing sales with enterprise customers. Can you help us?",
+        "status": "future",
+        "image": "/images/Lillian.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 5,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 5,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "Fantastic. Let's talk about the problem we're having...",
+	        "rewards": {
+	           "money": 3000,
+	           "health": 0,
+	           "workload": 5,
+	           "reputation": 5
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Darn. Can you recommend someone else?",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 15,
+        "character": "Isabeau Ibañez",
+        "opportunity" : "We want to create an onboarding program for our volunteers but it's hard to get them all in the same place. Can you help develop a program?",
+        "status": "future",
+        "image": "/images/Isabeau.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 3,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 5,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "Okay. Here's what we're doing now...",
+	        "rewards": {
+	           "money": 1500,
+	           "health": 0,
+	           "workload": 5,
+	           "reputation": 4
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Thanks for your time!",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 16,
+        "character": "Preston Piper",
+        "opportunity" : "We want to outsource all of our elearning development but we need someone to interact with the SMEs before handing off the course to the developers. Will you take the job?",
+        "status": "future",
+        "image": "/images/Preston.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 3,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 5,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "Excellent. Just talk with the SME and hand over the stuff to the developers.",
+	        "rewards": {
+	           "money": 3000,
+	           "health": -4,
+	           "workload": 3,
+	           "reputation": 0
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Thanks for your time!",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 17,
+        "character": "Sosa Sandoval",
+        "opportunity" : "We need someone to help us design a bunch of courses that we can sell. That's what you do, right?",
+        "status": "future",
+        "image": "/images/Sosa.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 5,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 5,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "Alright! We'll make a bundle.",
+	        "rewards": {
+	           "money": 6000,
+	           "health": -10,
+	           "workload": 8,
+	           "reputation": 2
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Just as well. I can do it myself, probably.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 18,
+        "character": "Gerda Gerkins",
+        "opportunity" : "I'm a teacher thinking about making the switch to instructional design. I've been reading your blog. Do you have any advice?",
+        "status": "past",
+        "image": "/images/Gerda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 5
+        },
+        "duration": 5,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 5,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "Alright! We'll make a bundle.",
+	        "rewards": {
+	           "money": 6000,
+	           "health": -10,
+	           "workload": 8,
+	           "reputation": 2
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Just as well. I can do it myself, probably.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 19,
+        "character": "Kirsten Kameo",
+        "opportunity" : "Hey, I'm looking for instructional designs to share their experience on my podcast, Dear ID Redesign Coach Cast. Would you be interested in coming on the show?",
+        "status": "future",
+        "image": "/images/Kirsten.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 1,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 2,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "So awesome! Can't wait to have you on the show!",
+	        "rewards": {
+	           "money": 0,
+	           "health": 0,
+	           "workload": 1,
+	           "reputation": 4
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Hey, no problem. Maybe we can chat another time.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 20,
+        "character": "Skylah Shadey",
+        "opportunity" : "We want to create a bunch of gamified microlearning that our hourly employees will take on their own time so they will get better at the job. Can you make this type of game?",
+        "status": "past",
+        "image": "/images/Skylah.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 3,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 2,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "Great. We want our games to be super addictive!",
+	        "rewards": {
+	           "money": 6000,
+	           "health": -4,
+	           "workload": 5,
+	           "reputation": -3
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Oh, okay. Well what do you think about the games on Platform AddictiveGame? Would they work?",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 21,
+        "character": "Chandler Chantry",
+        "opportunity" : "We want to build a course using virtual reality. It's the next big thing. Let's discuss.",
+        "status": "past",
+        "image": "/images/Chandler.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 10
+        },
+        "duration": 4,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 2,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "It's gonna be so cool! Maybe we'll win an award!",
+	        "rewards": {
+	           "money": 6000,
+	           "health": -3,
+	           "workload": 6,
+	           "reputation": 5
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Maybe I should get a game developer?",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 22,
+        "character": "Peregrin Proudfood",
+        "opportunity" : "We want to implement xAPI in our organization, but we don't know how. We're looking for someone to help us.",
+        "status": "past",
+        "image": "/images/Chandler.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 4,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 2,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "It's gonna be so cool! Maybe we'll win an award!",
+	        "rewards": {
+	           "money": 6000,
+	           "health": -3,
+	           "workload": 6,
+	           "reputation": 5
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Maybe I should get a game developer?",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 23,
+        "character": "Matilda Manning, Advisor",
+        "opportunity" : "Invest in your own learning. Do you want to to improve your game design and development skills?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 10,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 1,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "Fantastic. Take some courses; make some games. This will be the only professional development you will focus on for a while.",
+	        "rewards": {
+	           "money": -300,
+	           "health": 0,
+	           "workload": 5,
+	           "reputation": 5
+	        },
+	        "impact" : {
+	        	"opp1": {
+	        		"id": 21,
+	        		"status": "future"
+	        	},
+	        	"opp2": {
+	        		"id": 20,
+	        		"status": "future"
+	        	},
+	        	"opp3": {
+	        		"id": 24,
+	        		"status": "past"
+	        	},
+	        	"opp4": {
+	        		"id": 12,
+	        		"status": "future"
+	        	},
+	        	"opp5": {
+	        		"id": 25,
+	        		"status": "past"
+	        	},
+	        }
+        },
+        "response_no": {
+	        "response_text": "I see... Maybe you can choose to focus on something else.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 24,
+        "character": "Matilda Manning, Advisor",
+        "opportunity" : "Invest in your own learning. Do you want to improve your JavaScript skills?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 10,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 1,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "Fantastic. Take some courses; build some experiences using JavaScript. This will be the only professional development you will focus on for a while.",
+	        "rewards": {
+	           "money": -300,
+	           "health": 0,
+	           "workload": 5,
+	           "reputation": 5
+	        },
+	        "impact" : {
+	        	"opp1": {
+	        		"id": 22,
+	        		"status": "future"
+	        	},
+	        	"opp2": {
+	        		"id": 23,
+	        		"status": "past"
+	        	},
+	        	"opp3": {
+	        		"id": 25,
+	        		"status": "past"
+	        	},
+	        	"opp4": {
+	        		"id": 40,
+	        		"status": "future"
+	        	}
+	        }
+        },
+        "response_no": {
+	        "response_text": "I see... Maybe you can choose to focus on something else.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 25,
+        "character": "Matilda Manning, Advisor",
+        "opportunity" : "Invest in your own learning. Do you want to improve your video creation and editing skills?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 10,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 1,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "Fantastic. Take some courses; make different kinds of videos. This will be the only professional development you will focus on for a while.",
+	        "rewards": {
+	           "money": -300,
+	           "health": 0,
+	           "workload": 5,
+	           "reputation": 5
+	        },
+	        "impact" : {
+	        	"opp1": {
+	        		"id": 24,
+	        		"status": "past"
+	        	},
+	        	"opp2": {
+	        		"id": 23,
+	        		"status": "past"
+	        	},
+	        	"opp3": {
+	        		"id": 36,
+	        		"status": "future"
+	        	},
+	        }
+        },
+        "response_no": {
+	        "response_text": "I see... Maybe you can choose to focus on something else.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 26,
+        "character": "Matilda Manning, Advisor",
+        "opportunity" : "There's a call for proposals for the BigHootenany Conference. Do you want to submit a proposal?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 4000,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 15
+        },
+        "duration": 10,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 2,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 10
+        },
+        "response_yes": {
+	        "response_text": "Okay. Fingers crossed!",
+	        "rewards": {
+	           "money": -2000,
+	           "health": 0,
+	           "workload": 5,
+	           "reputation": 10
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Maybe next year.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 27,
+        "character": "Pictagram",
+        "opportunity" : "There's this great dog account on Pictagram. A picture of Cesar the dog shows up on your stream. Do you like the picture?",
+        "status": "future",
+        "image": "/images/Cesar.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 1,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 20,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 2
+        },
+        "response_yes": {
+	        "response_text": "Such a good boy!",
+	        "rewards": {
+	           "money": 0,
+	           "health": 2,
+	           "workload": 2,
+	           "reputation": 0
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Right. Must. Focus. On. Work.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 28,
+        "character": "Wittr",
+        "opportunity" : "Your friend on Wittr sent you this cute cat video. Do you watch it?",
+        "status": "future",
+        "image": "/images/Fluffy.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 1,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 20,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 2
+        },
+        "response_yes": {
+	        "response_text": "Cats, amiright?",
+	        "rewards": {
+	           "money": 0,
+	           "health": 2,
+	           "workload": 2,
+	           "reputation": 0
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Right. Must. Focus. On. Work.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 29,
+        "character": "Jazzy",
+        "opportunity" : "Your dog is begging for a walk in the park. Take some time to rest and recharge?",
+        "status": "future",
+        "image": "/images/Jazzy.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 1,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 10,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "Good. Some time away from your computer with your best fur pal.",
+	        "rewards": {
+	           "money": 0,
+	           "health": 5,
+	           "workload": 1,
+	           "reputation": 0
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Deadlines to meet. Sorry Jazzy!",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 30,
+        "character": "Pepe",
+        "opportunity" : "You cat has parked himself on your keyboard, demanding attention. Take some time to play with him?",
+        "status": "future",
+        "image": "/images/Pepe.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 1,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 10,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "Break out the feather on a stick!",
+	        "rewards": {
+	           "money": 0,
+	           "health": 5,
+	           "workload": 1,
+	           "reputation": 0
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Pepe seems a bit angry with you.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 31,
+        "character": "Matilda Manning, Advisor",
+        "opportunity" : "There are several Wittr chats for instructional designers. Do you want to get involved in social media?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 5,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 6,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "Okay. They each happen once a week. You'll have to make time in your schedule to interact.",
+	        "rewards": {
+	           "money": 0,
+	           "health": 0,
+	           "workload": 1,
+	           "reputation": 2
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "No problem. Maybe you can get involved in the ID community some other way.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 32,
+        "character": "Matilda Manning, Advisor",
+        "opportunity" : "You've been invited to give a webinar about your favorite ID topic. Will you accept?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 2,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 3,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 7
+        },
+        "response_yes": {
+	        "response_text": "They'll be looking forward to including you in the lineup!",
+	        "rewards": {
+	           "money": 0,
+	           "health": 0,
+	           "workload": 3,
+	           "reputation": 5
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Okay. Maybe later.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 33,
+        "character": "Matilda Manning, Advisor",
+        "opportunity" : "The local L&D profressional organization is starting a book club. Do you want to join?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 2,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 2,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 7
+        },
+        "response_yes": {
+	        "response_text": "There are lots of great books on the agenda. But you'll have to make time to keep up.",
+	        "rewards": {
+	           "money": 0,
+	           "health": 0,
+	           "workload": 3,
+	           "reputation": 1
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "No problem.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 34,
+        "character": "Matilda Manning, Advisor",
+        "opportunity" : "Join the local L&D profressional organization? It's a great way to network.",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 5,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 1,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "Good. This will do wonders for growing your network.",
+	        "rewards": {
+	           "money": 0,
+	           "health": 0,
+	           "workload": 1,
+	           "reputation": 6
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Take some time to think about it.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 35,
+        "character": "Matilda Manning, Advisor",
+        "opportunity" : "There's a group of colleagues that are calling for partners to help create an open-source universal design course for instructional designers. Do you want to contribute?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 5,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 1,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "Open-source contributions will open up new opportunities for you.",
+	        "rewards": {
+	           "money": 0,
+	           "health": 2,
+	           "workload": 2,
+	           "reputation": 3
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Take some time to think about it.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 36,
+        "character": "Ophelia Oberstein",
+        "opportunity" : "We want to create a series of videos to help explain our software. We like the animated explainer video style. Can you work with us to plan and develop these?",
+        "status": "past",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 5,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 3,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 5
+        },
+        "response_yes": {
+	        "response_text": "We're so excited! We think video will be a great tool for us.",
+	        "rewards": {
+	           "money": 0,
+	           "health": 0,
+	           "workload": 4,
+	           "reputation": 3
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "We were really hoping we could work with you...",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 37,
+        "character": "Estelle Estudiante",
+        "opportunity" : "I'm a student in the Big State Uni instructional design program and I have to interview an instructional designer. I have a 50 question survey I'd like to send you. Could you fill it out and send it back by the end of the day?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 1,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 6,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "Thanks for helping me out.",
+	        "rewards": {
+	           "money": 0,
+	           "health": 0,
+	           "workload": 2,
+	           "reputation": 0
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "I understand...",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 38,
+        "character": "Arthur Avery",
+        "opportunity" : "We have a bunch of old courses built in Flash. We want you to take them and update them. It shouldn't take long. Sound good?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 1,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 6,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "Fantastic. We've got a three month deadline.",
+	        "rewards": {
+	           "money": 0,
+	           "health": -3,
+	           "workload": 6,
+	           "reputation": 0
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Wouldn't have taken long. Don't know why you couldn't just do it.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 39,
+        "character": "Pilar Pena",
+        "opportunity" : "Every faculty member in the deparment has been told that they need to create an online course before the start of next semester. It's not perfect but there's opportunity for helping create good instruction. Can you help us?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 3,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 2,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 6
+        },
+        "response_yes": {
+	        "response_text": "Okay. Let me tell you a little more about our audience...",
+	        "rewards": {
+	           "money": 5000,
+	           "health": -2,
+	           "workload": 6,
+	           "reputation": 5
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "I get it. This will definitely be a tough one.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 40,
+        "character": "Jasmine Jordan",
+        "opportunity" : "We want to build a tool to help our learners self-assess their competency levels based on our competency framework and get back recommendations on trainings and other learning experiences. Can you help us?",
+        "status": "past",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 3,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 2,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 6
+        },
+        "response_yes": {
+	        "response_text": "I think this has a lot of potential research implications. We want to do a conference presentation about it after the pilot.",
+	        "rewards": {
+	           "money": 5000,
+	           "health": -2,
+	           "workload": 6,
+	           "reputation": 5
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Thanks for your time.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 41,
+        "character": "Zora Zaman",
+        "opportunity" : "We want to design a ramp-up experience for new managers. We want to have some work online and some be in-person with our trainers. Can you help us design the entire experience?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 15
+        },
+        "duration": 3,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 2,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 6
+        },
+        "response_yes": {
+	        "response_text": "We'll work with you to design the ramp-up experience. We're open to considering new technologies.",
+	        "rewards": {
+	           "money": 5000,
+	           "health": -2,
+	           "workload": 6,
+	           "reputation": 5
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Hey, no problem. We appreciate your time.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 42,
+        "character": "Walter Wayman",
+        "opportunity" : "We create off-the-shelf compliance courses. We need a developer. We pay well. Are you interested?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 2,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 5,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "We'll give you the topics and you make the courses, yeah?",
+	        "rewards": {
+	           "money": 3000,
+	           "health": -3,
+	           "workload": 3,
+	           "reputation": 0
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Alright. We were looking into other IDs. We'll go with one of them.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 43,
+        "character": "Lauren Lawrence",
+        "opportunity" : "We're looking to create a hand-on curriculum for K-12 educators around robotics. Can you help us develop it?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 4,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 5,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "We want to make sure that the curriculum covers a year's worth of topics. And we've got some teacher advisors we can use for testing and advice.",
+	        "rewards": {
+	           "money": 4000,
+	           "health": -2,
+	           "workload": 4,
+	           "reputation": 3
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "That's too bad...",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 44,
+        "character": "Ulrich Unctuous",
+        "opportunity" : "We really like the look of this course. Can you make us a course like this?",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 2,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 5,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "Awesome! Make it look just like that.",
+	        "rewards": {
+	           "money": 1000,
+	           "health": -3,
+	           "workload": 3,
+	           "reputation": -3
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Your loss.",
+	        "rewards": {
+				"money": 0,
+				"health": 0,
+				"workload": 0,
+				"reputation": 0
+	        },
+	        "impact": {}
+        }
+    },
+    {
+        "id": 45,
+        "character": "Quinn Quigley",
+        "opportunity" : "We worked with another instructional designer on this course but they bailed. We're just looking for someone to wrap them up. Our budget is $1200.",
+        "status": "future",
+        "image": "/images/Matilda.png",
+        "threshold": {
+        	"money": 0,
+        	"health": 0,
+        	"workload": null,
+        	"reputation": 0
+        },
+        "duration": 2,
+        "response_type": {
+            "type": "y/n"
+         },
+         "reuse": {
+            "max_reuse" : 5,
+            "used" : 0,
+            "last_used": 0,
+            "turns": 3
+        },
+        "response_yes": {
+	        "response_text": "Great. I'm sure you won't have a problem. That other guy was really a pain.",
+	        "rewards": {
+	           "money": 1200,
+	           "health": -3,
+	           "workload": 3,
+	           "reputation": -3
+	        },
+	        "impact" : {}
+        },
+        "response_no": {
+	        "response_text": "Oh. Okay.",
 	        "rewards": {
 				"money": 0,
 				"health": 0,

@@ -124,7 +124,7 @@ export const setContinueButton = (opportunity, allOpps, goto) => {
     return oneColumn;
 };
 
-const previewConsequences = (opportunity) => {
+// TODO: Show Years in Business in UI; Every IN_GAME_YEAR(7) number of turns; increment up years in business
 
-};
+// TODO: Go from Numbers to progress bars?
 

@@ -79,6 +79,10 @@ export const setClickListeners = (responseType, opportunity, allOpps, yesOrNo) =
     const yesButton = document.getElementById('yes-button');
     const noButton = document.getElementById('no-button');
     const continueButton = document.getElementById('continue-button');
+    const moneyText = document.getElementById('money-text');
+    const healthText = document.getElementById('health-text');
+    const workloadText = document.getElementById('workload-text');
+    const reputationText = document.getElementById('reputation-text');
 
     console.log(responseType);
 
@@ -86,9 +90,17 @@ export const setClickListeners = (responseType, opportunity, allOpps, yesOrNo) =
         yesButton.addEventListener('click', (e) => {
             console.log(allOpps);
             respondToAction(responseType, opportunity, allOpps , 'yes');
+            removeAllPreviewClasses(moneyText);
+            removeAllPreviewClasses(healthText);
+            removeAllPreviewClasses(workloadText);
+            removeAllPreviewClasses(reputationText);
         });
         noButton.addEventListener('click', (e) => {
             respondToAction(responseType, opportunity, allOpps, 'no');
+            removeAllPreviewClasses(moneyText);
+            removeAllPreviewClasses(healthText);
+            removeAllPreviewClasses(workloadText);
+            removeAllPreviewClasses(reputationText);
         });
     } else {
         continueButton.addEventListener('click', (e) => {
@@ -112,7 +124,7 @@ const setPlusMoneyClasses = (yesRewards, moneyText) => {
     }
 };
 
-const setPlusWorkloadlasses = (yesRewards, workloadText) => {
+const setPlusWorkloadClasses = (yesRewards, workloadText) => {
     if(yesRewards.workload <= 3) {
         workloadText.classList.add('plus-one');
     } else if (yesRewards.workload >= 4) {

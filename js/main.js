@@ -32,6 +32,7 @@ export let playerStats = {
 };
 
 const MAX_WORKLOAD = 15;
+const IN_GAME_YEAR = 7;
 
 let globalTurns = 0;
 
@@ -57,7 +58,7 @@ let globalTurns = 0;
   // Reputation
 // Impact: An object on yes and no responses that represents the consequences of the response on other opportunities
 // Game Play and Win/Lose Conditions
-  // An in-game year lasts 30 turns (I totally just made that up)
+  // An in-game year lasts 5 turns (I totally just made that up)
   // As a part of the year, the player will be presented with an opportunity each turn
   // Every accepted opportunity affects the one or more of the players stats (money, health, workload, repuation)
   // If the player's health dips below 10 (I also totally just made that up) they will be in hospital due to stress and anxiety and they will lose
@@ -146,6 +147,8 @@ const updateAfterChoice = (response, opportunity, allOpps, yesOrNo) => {
             opportunity['reuse']['last_used'] = globalTurns;
         }
     }
+
+    // TODO: If opportunity response has an impact, then allOpps should be updated according to the impact
 
     console.log(opportunity)
 
@@ -276,7 +279,21 @@ const filterOpps = (allOpps, stats) => {
     });
     console.log(filteredOpps);
     return filteredOpps;
-}
+};
+
+/* TODO: Check every turn
+    If the player's health dips below 10 (I also totally just made that up) they will be in hospital due to stress and anxiety and they will lose
+    If the player's money dips below $500 (yup, made up) they will be unable to keep up with expenses and they will lose
+    If the player's reputation dips below 10 (you guessed it), they will be unable to find clients and they will lose
+    If the player's workload goes beyond MAX_WORKLOAD(15) projects, then it will begin to negatively affect their health (to a large extent) and reputation (to a lesser extent)
+    Workload should "wear off" in some number of turns, depending on the opportunity
+    Increment Up globalTurns
+
+*/
+
+
+/* TODO: If a player makes it 5 in-game years, they should have the opportunity to go for their CPPMPLP which will be an opportunity with a +workload, -money; +reputation on completion
+    Upon successful completion of the CPPMPLP, the player wins */
 
 const initGameUI = () => {
     createIcons(playerStats);
