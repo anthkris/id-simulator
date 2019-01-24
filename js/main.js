@@ -303,5 +303,23 @@ const initGameUI = () => {
         });
 };
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./serviceworker.js").then(function (registration) {
+    console.log("Service Worker registered with scope:", registration.scope);
+  }).catch(function (err) {
+    console.log("Service worker registration failed:", err);
+  });
+}
+
+const installButton = document.getElementById('installer')
+
+window.addEventListener("beforeinstallprompt", function (install_event) {
+  install_event.preventDefault(); // Prevents immediate prompt display
+  installButton.addEventListener("click", function (e) {
+    install_event.prompt();
+  });
+  installButton.hidden = false; // Make button operable
+});
+
 initGameUI();
 

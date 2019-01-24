@@ -26,7 +26,7 @@ Build a business as a new instructional designer. You must last 5 in-game years 
 ## Build system
 
 __Dev__
-Spin up dev environment with hot reloading. Project in dev served on `localhost:5001`
+Spin up dev environment with hot reloading. Project in dev served on `localhost:5002`
 
 ```
 cd <project folder>
